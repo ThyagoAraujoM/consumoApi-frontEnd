@@ -5,71 +5,114 @@ export const ContainerStyled = styled(Container)`
   * {
     padding: 0px;
     margin: 0px;
+    box-sizing: border-box;
   }
   width: 100%;
   min-height: 100vh;
-  padding: 20px 20px 20px 20px;
   display: flex;
   flex-direction: column;
-  gap: 20px;
   text-align: center;
   justify-content: center;
-  border: 1px solid #000;
+  align-items: center;
+  gap: 20px;
 
   h2 {
     margin-bottom: 10px;
   }
+
   .c-standard-requisition {
-    margin-bottom: 50px;
+    max-width: 70%;
+
+    div {
+      text-align: start;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      align-items: center;
+      .c-send-box {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
+        gap: 50px;
+        height: 40px;
+        width: 100%;
+      }
+      .c-answer {
+        text-align: center;
+        background: #8d8d99;
+        color: #fff;
+        border: 1px solid #fff;
+        padding: 10px;
+        border-radius: 8px;
+      }
+    }
+
+    div + div {
+      margin-top: 20px;
+    }
   }
 
-  .c-buttons-container {
+  .c-custom-requisition {
     display: flex;
-    justify-content: center;
+    flex-direction: column;
     gap: 20px;
-    margin-top: 20px;
-  }
 
-  .c-post-container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-    gap: 10px;
     input {
-      width: 80px;
-      height: 20px;
-      border-radius: 5px;
-      border: 1px solid #000;
+      padding: 5px;
     }
-    div {
-      gap: 10px;
-      display: flex;
-      flex-direction: row;
-    }
-  }
 
-  .c-get-container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-    gap: 10px;
-    input {
-      width: 80px;
-      height: 20px;
-      border-radius: 5px;
-      border: 1px solid #000;
+    .c-answer {
+      text-align: center;
+      background: #8d8d99;
+      color: #fff;
+      border: 1px solid #fff;
+      padding: 10px;
+      border-radius: 8px;
     }
-    div {
-      gap: 10px;
+
+    .c-post-container {
       display: flex;
-      flex-direction: row;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+      gap: 10px;
+      input {
+        width: 80px;
+        height: 20px;
+        border-radius: 5px;
+        border: 1px solid #000;
+      }
+      div {
+        gap: 10px;
+        display: flex;
+        flex-direction: row;
+      }
+    }
+
+    .c-get-container {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+      gap: 10px;
+      input {
+        width: 80px;
+        height: 20px;
+        border-radius: 5px;
+        border: 1px solid #000;
+      }
+      div {
+        gap: 10px;
+        display: flex;
+        flex-direction: row;
+      }
     }
   }
 `;
 
 export const ButtonStyled = styled(Button)`
-  margin-top: 10px;
-  padding: 10px;
+  height: 40px;
+  padding: 5px 10px;
+  box-sizing: border-box;
 `;

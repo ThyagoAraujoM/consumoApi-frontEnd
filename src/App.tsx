@@ -3,9 +3,9 @@ import axios from "axios";
 import { ContainerStyled, ButtonStyled } from "./AppStyle";
 
 function App() {
-  const [postStandartResponse, setPostStandartResponse] = useState();
+  const [postStandartResponse, setPostStandartResponse] = useState("");
   const [getStandartResponse, setGetStandartResponse] = useState("");
-  const [postCustomResponse, setPostCustomResponse] = useState();
+  const [postCustomResponse, setPostCustomResponse] = useState("");
   const [getCustomResponse, setGetCustomResponse] = useState("");
   const [postDataN, setPostDataN] = useState("");
   const [postDataS, setPostDataS] = useState("");
@@ -35,7 +35,7 @@ function App() {
 
   function handleRequisitionPostCustom() {
     if (postDataN !== "" && postDataS !== "") {
-      const salaN = postDataN.split("");
+      const salaN = postDataN.replace("-", "").split("");
       const salaS = postDataS.replace(/ /g, "").split("");
       let listas = { salaN, salaS };
 
@@ -51,8 +51,8 @@ function App() {
 
   function handleRequisitionGetCustom() {
     let data = {
-      intervaloA: [Number(getData[0]), Number(getData[1])],
-      intervaloB: [Number(getData[2]), Number(getData[3])],
+      intervaloA: [getData[0], getData[1]],
+      intervaloB: [getData[2], getData[3]],
     };
 
     axios
@@ -67,40 +67,51 @@ function App() {
     <ContainerStyled>
       <h1> Escolha entre requisição pronta ou faça a sua própria</h1>
       <div className='c-standard-requisition'>
+        <h2>Opções de requisição GET/POST predefinidas</h2>
         <div>
-          <h2>Opções de requisição GET/POST predefinidas</h2>
           <p>
             Primeira opção sendo requisição POST, onde manda dois valores e são
             retornados organizados em ordem numérica e alfabética.
           </p>
-          {postStandartResponse !== null ? (
-            <p>{JSON.stringify(postStandartResponse)}</p>
+          <div className={"c-send-box"}>
+            <p>Valores: salaN: [ 1, 5, 7, 8 ], salaS: [ “a”, “x”, “n” ]</p>
+            <ButtonStyled
+              variant='contained'
+              onClick={() => {
+                handleRequisitionPostStandart();
+              }}>
+              Enviar
+            </ButtonStyled>
+          </div>
+          {postStandartResponse !== "" ? (
+            <p className={"c-answer"}>
+              Resultado: {JSON.stringify(postStandartResponse)}
+            </p>
           ) : null}
-          <ButtonStyled
-            variant='contained'
-            onClick={() => {
-              handleRequisitionPostStandart();
-            }}>
-            salaN: [ 1, 5, 7, 8 ], salaS: [ “a”, “x”, “n” ]
-          </ButtonStyled>
         </div>
+
         <div>
           <p>
             Segunda sendo uma requisição GET, onde vai comparar dois arrays com
             2 valores numéricos e devolver true ou false se um dos valores de um
             array for igual a do outro.
           </p>
-          {getStandartResponse !== null ? <p> {getStandartResponse}</p> : null}
-          <ButtonStyled
-            variant='contained'
-            onClick={() => {
-              handleRequisitionGetStandart();
-            }}>
-            intervaloA: [ 20, 40 ], intervaloB: [ 10, 60 ]
-          </ButtonStyled>
+          <div className={"c-send-box"}>
+            <p>Valores: intervaloA: [ 20, 40 ], intervaloB: [ 10, 60 ]</p>
+            <ButtonStyled
+              variant='contained'
+              onClick={() => {
+                handleRequisitionGetStandart();
+              }}>
+              Enviar
+            </ButtonStyled>
+          </div>
+          {getStandartResponse !== "" ? (
+            <p className={"c-answer"}>Resultado: {getStandartResponse}</p>
+          ) : null}
         </div>
       </div>
-      <div>
+      <div className={"c-custom-requisition"}>
         <h2>Personalizada</h2>
         <div className={"c-post-container"}>
           Tipo Post Primeiro campo apenas números e o segundo apenas letras
@@ -120,8 +131,8 @@ function App() {
               }}
             />
           </div>
-          {postCustomResponse !== null ? (
-            <p>{JSON.stringify(postCustomResponse)}</p>
+          {postCustomResponse !== "" ? (
+            <p className={"c-answer"}>{JSON.stringify(postCustomResponse)}</p>
           ) : null}
           <ButtonStyled
             variant='contained'
@@ -169,7 +180,9 @@ function App() {
               }}
             />
           </div>
-          {getCustomResponse !== null ? <p> {getCustomResponse}</p> : null}
+          {getCustomResponse !== "" ? (
+            <p className={"c-answer"}> {getCustomResponse}</p>
+          ) : null}
           <ButtonStyled
             variant='contained'
             onClick={() => {
