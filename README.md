@@ -1,46 +1,92 @@
-# Getting Started with Create React App
+<p align="center">
+  <h1>Consumo de Api - Front End </h1>
+</p>
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+<p align="center">
+  <img src="https://img.shields.io/github/stars/thyagoaraujom/Move-it?label=stars&message=MIT&color=8257E5&labelColor=000000" alt="Stars">
+  <img  src="https://img.shields.io/static/v1?label=license&message=MIT&color=8257E5&labelColor=000000" alt="License">   
+</p>
 
-## Available Scripts
+<h1 align="center">
+    <img alt="Move it Demonstration" src="./github/consumoApi.gif" />
+</h1>
 
-In the project directory, you can run:
+<br>
 
-### `yarn start`
+## 🧪 Tecnologias
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+Esse projeto foi desenvolvido com as seguintes tecnologias:
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+- [React](https://reactjs.org)
+- [TypeScript](https://www.typescriptlang.org/)
+- [Material-UI](https://mui.com/pt/)
+- [Axios](https://axios-http.com/docs/intro)
 
-### `yarn test`
+<br>
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+---
 
-### `yarn build`
+<br>
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+## 💻 Projeto
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+Está aplicação é a parte front end de uma aplicação de consumo de api, ela vai mandar uma requisição get e post para o back e receber as respostas e as renderizar na tela. Tendo as opções get e post padrões com valores fixos e as personalizadas que o usuário escolhe os dados que quer mandar.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+Acesse a aplicação <a target="_blank" href="https://consumo-api.vercel.app">aqui</a>.
 
-### `yarn eject`
+<br>
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+---
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+<br>
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+## 🚀 Como executar
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+Clone o projeto e acesse a pasta do mesmo.
 
-## Learn More
+```bash
+$ git clone https://github.com/ThyagoAraujoM/consumoApi-frontEnd.git
+```
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+Para iniciá-lo, siga os passos abaixo:
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+```bash
+# Instalar as dependências
+$ yarn
+
+# Iniciar o projeto
+$ yarn start
+```
+
+Agora você pode acessar [`localhost:3000`](http://localhost:3000) do seu navegador.
+
+---
+
+<h2 id="--Contributing"> 🤝 Contribuindo </h2>
+
+Este projeto é para fins de estudo.
+
+Todos os tipos de contribuições são muito bem-vindos e apreciados!
+
+⭐️ Iniciar o projeto
+</br>
+🐛 Encontrar e relatar problemas
+</br>
+📥 Envie PRs para ajudar a resolver problemas ou adicionar recursos
+
+---
+
+<h2 id="-autor">Autor</h2>
+
+<a href="https://github.com/thyagoaraujom">
+ <img style="border-radius: 50%;" src="https://avatars.githubusercontent.com/u/51569984" width="100px;" alt=""/>
+</br>
+<p> Thyago Araujo <p>
+</a>
+
+[![Linkedin Badge](https://img.shields.io/badge/-ThyagoAraujo-blue?style=flat-square&logo=Linkedin&logoColor=white&link=https://www.linkedin.com/in/thyago-araujo-m/)](https://www.linkedin.com/in/thyago-araujo-m/)
+[![Gmail Badge](https://img.shields.io/badge/-thyagoaraujomotta@gmail.com-c14438?style=flat-square&logo=Gmail&logoColor=white&link=mailto:thyagoaraujomotta@gmail.com)](mailto:thyagoaraujomotta@gmail.com)
+
+---
+
+Feito com ❤️ por Thyago Araujo 👋🏽 [Entre em contato!](https://www.linkedin.com/in/thyago-araujo-m/)
