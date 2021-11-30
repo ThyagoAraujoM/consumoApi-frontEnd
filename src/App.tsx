@@ -10,11 +10,11 @@ function App() {
   const [postDataN, setPostDataN] = useState("");
   const [postDataS, setPostDataS] = useState("");
   const [getData, setGetData] = useState(["", "", "", ""]);
-
+  const URL = "https://consumo-api-back.herokuapp.com";
   function handleRequisitionPostStandart() {
     let listas = { salaN: [1, 5, 7, 8], salaS: ["a", "x", "n"] };
     axios
-      .post("http://localhost:8080/ordenaLista", {
+      .post(`${URL}/ordenaLista`, {
         listas,
       })
       .then((res) => {
@@ -25,12 +25,10 @@ function App() {
   function handleRequisitionGetStandart() {
     let data = { intervaloA: [20, 40], intervaloB: [10, 60] };
 
-    axios
-      .get("http://localhost:8080/interlace", { params: { data } })
-      .then((res) => {
-        console.log(res.data.validate);
-        setGetStandartResponse(`${res.data.validate}`);
-      });
+    axios.get(`${URL}/interlace`, { params: { data } }).then((res) => {
+      console.log(res.data.validate);
+      setGetStandartResponse(`${res.data.validate}`);
+    });
   }
 
   function handleRequisitionPostCustom() {
@@ -40,7 +38,7 @@ function App() {
       let listas = { salaN, salaS };
 
       axios
-        .post("http://localhost:8080/ordenaLista", {
+        .post(`${URL}/ordenaLista`, {
           listas,
         })
         .then((res) => {
@@ -55,12 +53,10 @@ function App() {
       intervaloB: [getData[2], getData[3]],
     };
 
-    axios
-      .get("http://localhost:8080/interlace", { params: { data } })
-      .then((res) => {
-        console.log(res.data.validate);
-        setGetCustomResponse(`${res.data.validate}`);
-      });
+    axios.get(`${URL}/interlace`, { params: { data } }).then((res) => {
+      console.log(res.data.validate);
+      setGetCustomResponse(`${res.data.validate}`);
+    });
   }
 
   return (
